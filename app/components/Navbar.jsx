@@ -1,17 +1,45 @@
-import Image from "next/image";
-import ashibullahimg from '@/public/images/ashibullah.png'
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
+
     return (
-        <div className="grid grid-cols-3 justify-center items-center p-10 mt-2 ">
-            <div className=" grid col-span-2 p-4 ">
-                <h1 className="font-bold text-3xl lg:text-6xl">I'm Ashib Ullah</h1>
-                <p className="text-xl mt-3 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quod minima tenetur accusantium deleniti voluptatem nostrum suscipit debitis sint quae, officia, aspernatur animi adipisci id excepturi sed? Omnis, ipsa corrupti.</p>
+        <nav className="w-full bg-auto shadow-md fixed top-0 left-0 z-50 ">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+                {/* Logo */}
+                <h1 className="text-2xl font-bold">Ashib<span className="text-red-600">Ullah</span></h1>
+
+                {/* Menu for large screens */}
+                <ul className="hidden md:flex gap-8 text-md  font-light">
+                    <li><Link href="/" className="hover:text-red-600">Home</Link></li>
+                    <li><Link href="#about" className="hover:text-red-600">About</Link></li>
+                    <li><Link href="#projects" className="hover:text-red-600">Projects</Link></li>
+                    <li><Link href="#contact" className="hover:text-red-600">Contact</Link></li>
+                </ul>
+
+                {/* Mobile Menu button */}
+                <button 
+                    className="md:hidden text-3xl"
+                    onClick={() => setOpen(!open)}
+                >
+                    ☰
+                </button>
             </div>
-            <div>
-                <Image src={ashibullahimg} alt="Ashib Ullah" width={400} />
-            </div>
-        </div>
+
+            {/* Mobile Dropdown Menu */}
+            {open && (
+                <ul className="md:hidden flex flex-col bg-white shadow-md px-6 py-4 gap-4 text-lg font-medium">
+                    <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
+                    <li><Link href="#about" onClick={() => setOpen(false)}>About</Link></li>
+                    <li><Link href="#projects" onClick={() => setOpen(false)}>Projects</Link></li>
+                    <li><Link href="#contact" onClick={() => setOpen(false)}>Contact</Link></li>
+                </ul>
+            )}
+        </nav>
     );
 };
 
