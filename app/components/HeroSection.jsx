@@ -11,7 +11,7 @@ const HeroSection = () => {
 
             {/* Text Section */}
             <div className="lg:col-span-2 text-center lg:text-left px-2">
-                <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-red-600">Hello, I'm <br /><span className="text-white text-2xl md:text-3xl lg:text-4xl " > <TypeAnimation
+                <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-red-600">Hello, I&apos;m <br /><span className="text-white text-2xl md:text-3xl lg:text-4xl " > <TypeAnimation
                     sequence={[
                         'Ashib Ullah',
                         1000,

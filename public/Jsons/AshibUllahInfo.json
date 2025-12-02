@@ -1,0 +1,19 @@
+{
+  "tabs": [
+    {
+      "name": "Skills",
+      "slug": "skills",
+      "content": "JavaScript, Next.js, Tailwind, Node.js"
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "content": "BSc in CSE, Web Development Courses"
+    },
+    {
+      "name": "Certification",
+      "slug": "certification",
+      "content": "Meta Front-End, Google IT, Udemy Bootcamp"
+    }
+  ]
+}
