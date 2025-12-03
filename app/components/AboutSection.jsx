@@ -30,7 +30,7 @@ const AboutSection = () => {
                         quia placeat!
                     </p>
                     <div className='flex gap-4 mt-5 '>
-                        <AboutTabs apiUrl="https://drive.google.com/uc?export=download&id=1RNk2Kr3bO5KZZbeIdhN2xcTnmTmER3Ip" />
+                        <AboutTabs apiUrl='/api/portfolioInfo' />
 
                     </div>
                 </div>
