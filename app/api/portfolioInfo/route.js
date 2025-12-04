@@ -5,9 +5,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(){
     await mongoose.connect(connectionStr)
-    console.log("Querying collection:", Portfolio.collection.name);
+    // console.log("Querying collection:", Portfolio.collection.name);
     const data = await Portfolio.findOne()
-    console.log("Data found:", data);
+    // console.log("Data found:", data);
     
     return NextResponse.json(data);
 }
