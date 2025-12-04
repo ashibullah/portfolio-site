@@ -2,34 +2,55 @@
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import contactImage from '@/public/images/ashibullah.png';
+import { toast, Zoom } from "react-toastify";
 
 export default function ContactMe() {
     const {
         register,
         handleSubmit,
         reset,
-        formState: { errors , isSubmitting },
+        formState: { errors, isSubmitting },
     } = useForm();
 
-const onSubmit = async (data) => {
-  try {
-    const response = await fetch("/api/contactme", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch("/api/contactme", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
 
-    const result = await response.json();
-    if (result.success) {
-      alert("Message sent successfully!");
-      reset(); // clear form
-    } else {
-      alert("Failed to send message.");
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
+            const result = await response.json();
+            if (result.success) {
+                toast.success('Message Sent Successfully', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Zoom,
+                });
+                reset(); // clear form
+            } else {
+                toast.error('Failed to send message.', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Zoom,
+                });
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
 
 
 
@@ -92,12 +113,12 @@ const onSubmit = async (data) => {
                     </div>
 
                     {/* Submit */}
-                        <button
-                            type="submit"
-                            className="mt-3 w-sm p-2 bg-red-600 hover:bg-red-700  rounded-xl text-white font-semibold" disabled={isSubmitting}
-                        >
-                            {isSubmitting ? 'Sending...' : 'Send Message'}
-                        </button>
+                    <button
+                        type="submit"
+                        className="mt-3 md:w-sm sm:w-full p-2 bg-red-600 hover:bg-red-700  rounded-xl text-white font-semibold" disabled={isSubmitting}
+                    >
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </button>
                 </form>
             </div>
         </div>
