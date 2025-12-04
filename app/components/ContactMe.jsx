@@ -7,12 +7,31 @@ export default function ContactMe() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors , isSubmitting },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Form Submitted:", data);
-    };
+const onSubmit = async (data) => {
+  try {
+    const response = await fetch("/api/contactme", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert("Message sent successfully!");
+      reset(); // clear form
+    } else {
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
+
+
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8 pb-10 px-4">
