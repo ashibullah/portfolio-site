@@ -1,37 +1,11 @@
 import Image from "next/image";
+import bistroImg from '@/public/images/bistro.png'
 
-const projects = [
-    {
-        id: 1,
-        title: "Portfolio Website",
-        description: "A modern portfolio built with Next.js and Tailwind CSS.",
-        image: "/images/bistro.png",
-    },
-    {
-        id: 2,
-        title: "E-Commerce App",
-        description: "A full-stack ecommerce store with Stripe payments.",
-        image: "/images/bistro.png",
-    },
-    {
-        id: 3,
-        title: "ML DL",
-        description: "A real-time chat app using Firebase & React.",
-        image: "/images/bistro.png",
-    },
-    {
-        id: 4,
-        title: "Calculator",
-        description: "A real-time chat app using Firebase & React.",
-        image: "/images/bistro.png",
-    },
-    {
-        id: 5,
-        title: "XYZ",
-        description: "A real-time chat app using Firebase & React.",
-        image: "/images/bistro.png",
-    },
-];
+const res = await fetch("http://localhost:3000/api/projects", {
+    cache: "no-store", // optional
+});
+
+const projects = await res.json();
 
 const MyProject = () => {
     return (
@@ -46,7 +20,7 @@ const MyProject = () => {
                     >
                         <div className="w-full h-52 relative">
                             <Image
-                                src={project.image}
+                                src={project.img?.trim() || bistroImg}
                                 alt={project.title}
                                 fill
                                 className="object-cover"

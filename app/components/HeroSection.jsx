@@ -1,7 +1,6 @@
-'use client'
 import Image from "next/image";
 import ashibullahimg from '@/public/images/ashibullah.png'
-import { TypeAnimation } from "react-type-animation";
+import AnimatedHeroText from "./AnimatedHeroText";
 
 
 
@@ -11,24 +10,8 @@ const HeroSection = () => {
 
             {/* Text Section */}
             <div className="lg:col-span-2 text-center lg:text-left px-2">
-                <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-red-600">Hello, I&apos;m <br /><span className="text-white text-2xl md:text-3xl lg:text-4xl " > <TypeAnimation
-                    sequence={[
-                        'Ashib Ullah',
-                        1000,
-                        'Full stack Developer',
-                        1000,
-                        'Graphics Designer',
-                        1000,
-                        'UI UX Designer',
-                        1000,
-                        'Video Editor',
-                        1000
-                    ]}
-                    wrapper="span"
-                    speed={50}
-                    style={{ fontSize: '2em', display: 'inline-block' }}
-                    repeat={Infinity}
-                /></span></h1>
+                <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-red-600">Hello, I&apos;m <br /><span className="text-white text-2xl md:text-3xl lg:text-4xl " > 
+                    <AnimatedHeroText/></span></h1>
                 <p className="text-base md:text-lg lg:text-xl mt-4 text-gray-400 leading-relaxed">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Recusandae quod minima tenetur accusantium deleniti voluptatem nostrum suscipit

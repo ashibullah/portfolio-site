@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import contactImage from '@/public/images/ashibullah.png';
+import contactImage from '@/public/images/contactme.png';
 import { toast, Zoom } from "react-toastify";
 
 export default function ContactMe() {
