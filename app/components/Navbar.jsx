@@ -31,9 +31,9 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
                 {/* Logo */}
-                <h1 className="text-2xl font-bold">
+                <Link href={'/'}  className="text-2xl font-bold ">
                     Ashib<span className="text-red-600">Ullah</span>
-                </h1>
+                </Link>
 
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex gap-8 text-md font-light">

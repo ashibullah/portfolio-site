@@ -55,7 +55,7 @@ export default function ContactMe() {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8 pb-10 px-4">
+        <div id='contact' className="grid grid-cols-1 md:grid-cols-3 items-center gap-8 pb-10 px-4">
 
             {/* Image Section */}
             <div className="flex justify-center md:justify-start">

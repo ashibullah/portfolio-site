@@ -4,7 +4,7 @@ import AboutTabs from './AboutTabs';
 
 const AboutSection = () => {
     return (
-        <section className="px-6 md:px-10 py-10">
+        <section id='about' className="px-6 md:px-10 py-10">
             <div className="flex flex-col lg:flex-row items-center gap-10">
 
                 {/* Image */}

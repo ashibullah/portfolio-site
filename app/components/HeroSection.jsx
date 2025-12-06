@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ashibullahimg from '@/public/images/ashibullah.png'
 import AnimatedHeroText from "./AnimatedHeroText";
+import Link from "next/link";
 
 
 
@@ -20,12 +21,12 @@ const HeroSection = () => {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mt-6">
-                    <button className="px-6 py-2 bg-red-600 text-white hover:bg-black hover:border rounded-full transition">
+                    <Link href={'/#contact'} className="px-6 py-2 bg-red-600 text-white hover:bg-black hover:border rounded-full transition">
                         Hire me
-                    </button>
-                    <button className="px-6 py-2 border border-red-600 hover:bg-red-600 hover:text-white rounded-full transition">
+                    </Link>
+                    <Link href={'/'} className="px-6 py-2 border border-red-600 hover:bg-red-600 hover:text-white rounded-full transition">
                         Download CV
-                    </button>
+                    </Link>
                 </div>
             </div>
 
