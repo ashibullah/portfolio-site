@@ -7,7 +7,7 @@ const ProjectDetails = async ({ params }) => {
     const id = (await params).productid;
 
     // Fetch project from API
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/${id}`, {
+    const res = await fetch(`/api/projects/${id}`, {
         // cache: "no-store", // ensures server-side fetch
     });
 

@@ -2,7 +2,7 @@ import Image from "next/image";
 import bistroImg from '@/public/images/bistro.png'
 import Link from "next/link";
 
-const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects`, {
+const res = await fetch(`/api/projects`, {
     // cache: "no-store", // optional
 });
 
