@@ -4,19 +4,25 @@ import AnimatedHeroText from "./AnimatedHeroText";
 import Link from "next/link";
 
 
+const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/resume`, {
+        cache: "no-store", // optional
+    });
+
+const resumearr = await res.json();
+// console.log(resumearr);
+
 
 const HeroSection = () => {
-    return (
+    
+   return (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 justify-center items-center p-6 lg:p-16 mt-20">
 
             {/* Text Section */}
             <div className="lg:col-span-2 text-center lg:text-left px-2">
                 <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-red-600">Hello, I&apos;m <br /><span className="text-white text-2xl md:text-3xl lg:text-4xl " > 
                     <AnimatedHeroText/></span></h1>
-                <p className="text-base md:text-lg lg:text-xl mt-4 text-gray-400 leading-relaxed">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae quod minima tenetur accusantium deleniti voluptatem nostrum suscipit
-                    debitis sint quae, officia, aspernatur animi adipisci id excepturi sed?
+                <p className="text-base mt-4 text-gray-300 leading-relaxed">
+                    Self-taught and highly motivated MERN Stack Developer with hands-on experience in building full-stack web applications. Proficient in JavaScript, React, Next.js, Node.js, and MongoDB. I have also conducted research on Machine Learning and Deep Learning, enhancing my problem-solving approach and technical versatility. Additionally, I apply my graphic design skills to create visually appealing UI/UX experiences. Passionate about clean code, continuous learning, and building impactful products. Seeking opportunities to contribute in a collaborative and fast-paced environment.
                 </p>
 
                 {/* Buttons */}
@@ -24,7 +30,7 @@ const HeroSection = () => {
                     <Link href={'/#contact'} className="px-6 py-2 bg-red-600 text-white hover:bg-black hover:border rounded-full transition">
                         Hire me
                     </Link>
-                    <Link href={'/'} className="px-6 py-2 border border-red-600 hover:bg-red-600 hover:text-white rounded-full transition">
+                    <Link href={resumearr?.downloadLink} target="_blank" rel="noopener noreferrer"  className="px-6 py-2 border border-red-600 hover:bg-red-600 hover:text-white rounded-full transition">
                         Download CV
                     </Link>
                 </div>

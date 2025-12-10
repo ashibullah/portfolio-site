@@ -24,6 +24,14 @@ const projectSchema = new mongoose.Schema(
             type: String,
             default: "",
         },
+        livelink: {
+            type: String,
+            default: "",
+        },
+        repolink: {
+            type: String,
+            default: "",
+        }
     },
     { timestamps: true, collection: "projects" }
 );

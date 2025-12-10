@@ -1,5 +1,7 @@
 import Image from "next/image";
 import bistroImg from "@/public/images/bistro.png";
+import Link from "next/link";
+import { FaGithub, FaInternetExplorer, FaLink } from "react-icons/fa";
 
 const ProjectDetails = async ({ params }) => {
     const id = (await params).productid;
@@ -16,11 +18,12 @@ const ProjectDetails = async ({ params }) => {
     return (
         <div className="p-6 sm:p-10 mx-auto mt-10 max-w-6xl flex flex-col md:flex-row gap-8 items-start mt-20 mb-20">
             {/* Project Image */}
-            <div className="w-full md:w-1/2 h-64 md:h-auto relative rounded-md overflow-hidden">
+            <div className="w-full md:w-1/2 h-64 md:h-auto relative rounded-md ">
                 <Image
                     src={project.img?.trim() || bistroImg}
                     alt={project.title}
                     width={600}
+                    height={600}
                     className="object-cover rounded-md"
                 />
             </div>
@@ -32,6 +35,13 @@ const ProjectDetails = async ({ params }) => {
                 <p className="text-gray-500 capitalize">
                     <strong>Category:</strong> {project.category}
                 </p>
+                {
+                    project.livelink && (<Link href={project.livelink} target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-blue-400 mt-5"><FaLink className="inline mr-3 mx-auto my-auto" />Live Link</Link>)
+                }
+                {
+                    project.repolink && (<Link href={project.repolink} target="_blank" rel="noopener noreferrer"  className="text-blue-200 hover:text-blue-400 "><FaGithub className="inline mr-3 mx-auto my-auto" />Repo Link</Link>)
+                }
+
             </div>
         </div>
 

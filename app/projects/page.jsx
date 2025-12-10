@@ -2,13 +2,13 @@ import Image from "next/image";
 import bistroImg from '@/public/images/bistro.png'
 import Link from "next/link";
 
-const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects?limit=6`, {
-    cache: "no-store", // optional
+const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects`, {
+    // cache: "no-store", // optional
 });
 
 const projects = await res.json();
 
-const MyProject = () => {
+const AllProjects = () => {
     return (
         <div id='projects' className="px-10 py-16">
             <h2 className="text-4xl font-bold mb-10 text-center">My Projects & Research</h2>
@@ -25,7 +25,6 @@ const MyProject = () => {
                                 alt={project.title}
                                 fill
                                 className="object-cover"
-                                quality={60} 
                             />
                         </div>
 
@@ -40,13 +39,9 @@ const MyProject = () => {
                     </Link>
                 ))}
             </div>
-            <div className="flex justify-center mt-20">
-                <Link href={'/projects'} className="px-6 py-2 bg-red-600 text-white hover:bg-black hover:border rounded-full transition">
-                View all Projects and Research
-            </Link>
-            </div>
+            
         </div>
     );
 };
 
-export default MyProject;
+export default AllProjects;
