@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "geist": "^1.5.1",
     "mongoose": "^9.0.0",
     "motion": "^12.23.26",
     "next": "16.0.6",

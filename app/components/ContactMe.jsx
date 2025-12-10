@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import contactImage from '@/public/images/contactme.png';
-import { toast, Zoom } from "react-toastify";
+import { toast, ToastContainer, Zoom } from "react-toastify";
 
 export default function ContactMe() {
     const {
@@ -121,6 +121,7 @@ export default function ContactMe() {
                     </button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 }
