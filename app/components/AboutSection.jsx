@@ -23,7 +23,7 @@ const AboutSection = () => {
                         About Me
                     </h1>
 
-                    <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+                    <p className="text-gray-300 text-base md:text-md leading-relaxed">
                         I’m a self-taught full-stack developer who works with JavaScript, React, Next.js, Node.js, and MongoDB. I build clean and easy-to-use web applications, use my Machine Learning and design knowledge, and can quickly learn new technologies to create useful products.
                     </p>
                     <div className='flex gap-4 mt-5 '>
