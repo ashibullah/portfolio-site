@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'i.ibb.co',
       },
+       {
+        protocol: "https",
+        hostname: "github-readme-activity-graph.vercel.app",
+      },
     ],
   },
 };

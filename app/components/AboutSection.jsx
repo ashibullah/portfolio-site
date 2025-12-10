@@ -24,13 +24,10 @@ const AboutSection = () => {
                     </h1>
 
                     <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Quasi autem beatae suscipit illum nihil nam recusandae tempora,
-                        in voluptas illo velit sint molestias saepe nulla quis unde error 
-                        quia placeat!
+                        I’m a self-taught full-stack developer who works with JavaScript, React, Next.js, Node.js, and MongoDB. I build clean and easy-to-use web applications, use my Machine Learning and design knowledge, and can quickly learn new technologies to create useful products.
                     </p>
                     <div className='flex gap-4 mt-5 '>
-                        <AboutTabs apiUrl='/api/portfolioInfo' />
+                        <AboutTabs apiUrl={`/api/portfolioInfo`} />
 
                     </div>
                 </div>
