@@ -17,7 +17,7 @@ const MyProject = () => {
                 {projects.map((project) => (
                     <Link href={`/projects/${project.id}`}
                         key={project.id}
-                        className="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300"
+                        className="bg-red-900/15 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300"
                     >
                         <div className="w-full h-52 relative">
                             <Image

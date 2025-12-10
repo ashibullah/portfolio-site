@@ -4,7 +4,7 @@ import CountBar from "./components/CountBar";
 import GitHubGraph from "./components/GithubGraph";
 import HeroSection from "./components/HeroSection";
 import MyProject from "./components/MyProjects";
-import Navbar from "./components/Navbar";
+
 
 export default function Home() {
   return (
