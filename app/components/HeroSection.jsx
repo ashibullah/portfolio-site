@@ -2,13 +2,10 @@ import Image from "next/image";
 import ashibullahimg from '@/public/images/ashibullah.png'
 import AnimatedHeroText from "./AnimatedHeroText";
 import Link from "next/link";
+import ResumeLinks from "./ResumeLinks";
 
 
-const res = await fetch(`/api/resume`, {
-        cache: "no-store", // optional
-    });
 
-const resumearr = await res.json();
 // console.log(resumearr);
 
 
@@ -28,12 +25,7 @@ const HeroSection = () => {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mt-6">
-                    <Link href={'/#contact'} className="px-6 py-2 bg-red-600 text-white hover:bg-black hover:border rounded-full transition">
-                        Hire me
-                    </Link>
-                    <Link href={resumearr?.downloadLink} target="_blank" rel="noopener noreferrer"  className="px-6 py-2 border border-red-600 hover:bg-red-600 hover:text-white rounded-full transition">
-                        Download CV
-                    </Link>
+                    <ResumeLinks/>
                 </div>
             </div>
 
